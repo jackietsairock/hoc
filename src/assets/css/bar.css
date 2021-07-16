@@ -1,0 +1,13 @@
+.bar{
+    position: relative;
+    display: block;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 0.25rem 0 0.25rem 0;
+    text-align: center;
+}
+.bar:hover{
+    cursor: pointer;
+}

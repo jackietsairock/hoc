@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Row, Container, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import JackieInfo from './JackieInfo';
+import JackieSkill from './JackieSkill';
+import withOpen from './hocs/withOpen';
+
+const JackieInfoWithOpen = withOpen(JackieInfo);
+const JackieSkillWithOpen = withOpen(JackieSkill);
+
+class App extends Component {
+  render() {
+    return (
+      <Container fluid={true}>
+        <Row>
+          <Col xs="12" sm="12" md="6" lg="6" className="">
+            <Row>
+            <Col xs="12" sm="12" md="12" lg="12" className="">
+                <h1>Hight-Order Component:</h1>
+                <p>同一邏輯套用在不同組建的情況</p>
+              </Col>
+              <Col xs="6" sm="6" md="6" lg="6" className="">
+                  <JackieInfoWithOpen />
+              </Col>
+              <Col xs="6" sm="6" md="6" lg="6" className="">
+                  <JackieSkillWithOpen />
+              </Col>
+            </Row>
+          </Col>
+          <Col xs="12" sm="12" md="6" lg="6" className="">
+            
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default App;
