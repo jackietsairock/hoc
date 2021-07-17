@@ -10,4 +10,5 @@
 }
 .bar:hover{
     cursor: pointer;
+    background-color: rgb(22, 114, 201);
 }
